@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run AI Design Loop"
+  short_description: "Explore, critique, and refine interface directions"
+  default_prompt: "Use $run-ai-design-loop to explore and refine a distinctive interface direction from rendered concepts."
