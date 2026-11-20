@@ -93,9 +93,13 @@ Use one or more of these divergence mechanisms when needed:
   seed is a diversity device, not a quality signal, and should not appear in
   the interface.
 
-Make lightweight rendered proofs when prose is insufficient to judge the
-directions. Keep enough real content and behavior for the comparison to be
-honest.
+When options change what people notice, choose, or do in the primary task,
+show at least two playable alternatives before selecting a direction. Use the
+same representative content, viewport, and starting state. Give both options the
+same task and a way to reset, so any difference comes from the design. Keep the
+comparison small and separate from the shipped UI. If a playable preview is
+unavailable, compare matched captures or recordings and name the limitation.
+For a visual-only decision, a lightweight render is enough.
 
 Select one direction explicitly against product fit, distinctiveness,
 legibility, brand coherence, feasibility, and the user's stated taste. Ask the
