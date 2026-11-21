@@ -66,6 +66,11 @@ not appear.
 - Capture the moment that matters in a transition and save choices you can
   replay. [Interface BTS](https://iamnoman.com/interface-bts), [DialKit](https://github.com/joshpuckett/dialkit)
 - Check the result through the actual workflow. [Toolcraft](https://github.com/pixel-point/toolcraft)
+- Look closely at how neighboring surfaces and states fit together. `tactile-design`
+- Turn confirmed, recurring design corrections into scoped project rules.
+  [Learn Taste](https://aiforui.dev/skills/learn-taste)
+- Pick a specialist when a specific part of the work needs one. [Ask Emil](https://aiforui.dev/skills/ask-emil)
+- Replay the primary task with a realistic stress fixture. [Break UI](https://aiforui.dev/skills/break-ui)
 
 ## What it expects
 
@@ -93,6 +98,9 @@ plugins/run-ai-design-loop/
   skills/run-ai-design-loop/
     SKILL.md
     agents/openai.yaml
+    references/
+      rendered-review.md
+      taste-rules.md
 ```
 
 ## License
