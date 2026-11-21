@@ -1,8 +1,18 @@
 # Run AI Design Loop
 
-A reusable design-direction skill for ChatGPT and Codex. It moves an interface
-from divergent concepts to an explicit direction, fresh-context rendered
-critique, bounded revision, and a final subtraction and quality pass.
+A design-direction skill for ChatGPT and Codex. Compare directions you can try,
+use critique to see where they hold up, and choose what to develop.
+
+## Try it
+
+> Use $run-ai-design-loop on this existing photo review screen. I’m torn
+> between keeping the thumbnail strip visible and giving the photo the whole
+> frame. Let me try both while moving through the same set of photos and
+> returning to the one I was reviewing. Help me decide what to keep.
+
+When a comparison leaves you torn, the loop looks for a shared usability issue
+or a tradeoff the first pass missed. It gives the remaining options the same
+test so you can make a more informed choice.
 
 ## Install as a plugin
 
@@ -30,7 +40,7 @@ After unzipping the release, add its absolute folder path as a local
 marketplace and install the plugin:
 
 ```bash
-codex plugin marketplace add /absolute/path/to/run-ai-design-loop-0.1.0
+codex plugin marketplace add /absolute/path/to/unpacked-run-ai-design-loop
 codex plugin add run-ai-design-loop@anirudh-design
 ```
 
