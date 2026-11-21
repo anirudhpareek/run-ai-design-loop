@@ -29,8 +29,11 @@ inspection alone as rendered proof.
 
 ## Operating Contract
 
-- Respect an existing design system, supplied references, product behavior,
-  content, and technical constraints.
+- Protect explicit requirements, scoped references, user data, and required
+  product behavior. Treat inherited layout, component choices, and style
+  conventions as defaults unless the brief or project makes them binding. If
+  a default is getting in the way, test a different approach in a reversible
+  preview. Resolve conflicting requirements before making dependent changes.
 - Judge rendered output and live behavior. Source code, passing builds, and the
   presence of CSS are not visual proof.
 - Use user taste as an input: record what they prefer, reject, and want users to
@@ -67,10 +70,18 @@ changed files, client bundles, logs, screenshots, or deployment inputs.
 
 ## 1. Discover: Create Real Alternatives
 
-First inspect the current product or brief. Establish the audience, primary
-task, desired feeling, platform, brand and technical constraints, existing
-design primitives, and the states that must remain functional. Capture a
-rendered baseline when an implementation already exists.
+Inspect the current product and the available brief first. Identify the audience,
+primary task, outcome, and decision still open. Record what is fixed, what is an
+existing default worth testing, and what is genuinely unknown. Capture a rendered
+baseline when an implementation already exists.
+
+If two plausible interpretations would change the audience, primary task,
+constraints, or definition of success, ask one focused question that explains
+the choice it unlocks. Continue common, reversible work while waiting. If the
+answer is already in the evidence, the user has settled it, or the choice is
+low-cost and reversible, proceed and note any material assumption. Delegated
+design judgment gives you room to choose a direction. Resolve conflicts
+between binding requirements before dependent edits.
 
 Create several meaningfully different direction briefs rather than cosmetic
 variants of one layout. Each brief should make clear:
@@ -93,19 +104,34 @@ Use one or more of these divergence mechanisms when needed:
   seed is a diversity device, not a quality signal, and should not appear in
   the interface.
 
-When options change what people notice, choose, or do in the primary task,
-show at least two playable alternatives before selecting a direction. Use the
-same representative content, viewport, and starting state. Give both options the
-same task and a way to reset, so any difference comes from the design. Keep the
-comparison small and separate from the shipped UI. If a playable preview is
-unavailable, compare matched captures or recordings and name the limitation.
-For a visual-only decision, a lightweight render is enough.
+When two credible directions would change what people notice, choose, or do in
+the primary task, compare them as small playable prototypes before choosing.
+Use the same representative content, viewport, task, and resettable starting
+state. Add one realistic edge case when it could change the choice. Change one
+input dimension at a time, such as ordering, long names, or empty states. If
+randomization helps probe the case, use synthetic values and record the seed
+or exact fixture so each direction can replay it. Keep comparisons isolated
+from the shipped UI. If playback is unavailable, use matched captures or
+recordings and state what behavior remains unverified. A lightweight render
+can settle a visual-only choice. If a direction changes how people resume
+their work after an action, cancellation, or interruption, test that return
+with the same starting state. Check what stays visible and what state, such as
+filter, selection, or reading position, is preserved.
 
 Select one direction explicitly against product fit, distinctiveness,
 legibility, brand coherence, feasibility, and the user's stated taste. Ask the
 user to choose when the decision would materially change the product and they
 have not asked for autonomous execution; otherwise choose, state why, and move
 forward.
+
+If the user is still torn, use the comparison or critique to identify a shared
+obstacle, missing evidence, or a tradeoff the first comparison obscured. Fix
+shared obstacles the same way across the viable options, narrow to meaningful
+finalists, and replay the same task and conditions. Use one such follow-up per
+decision within the revision budget. Ask one focused question tied to the tradeoff
+the replay exposes. If the user is still torn after the replay, no new evidence
+justifies it, or the user wants to keep the options open, state your recommendation
+and leave the choice open. Polish a direction only once it has been selected.
 
 ## 2. Define: Turn Direction Into Identity
 
@@ -122,13 +148,21 @@ Build or update the interface, then use an independent fresh-context critic
 whenever delegation or an equivalent review context is available. If it is not
 available, state that limitation and run the same screenshot-only brief as a
 constrained self-review.
-Give the critic a fresh context containing the design identity, relevant
-professional references, and screenshots of the rendered result. Omit source
-code, implementation effort, prior rationale, previous critiques, and the
-builder's desired score so sunk-cost bias and score gaming do not shape the
-review. Before sharing screenshots or artifacts with another agent or service,
-remove credentials, personal data, customer data, and confidential material,
-and stay within the user's authorized account and service boundaries.
+When first-use clarity matters, give the critic a neutral goal and the rendered
+state first. Keep the answer to the question under review out of that goal,
+including the intended control, gesture, scope, or next state. For example,
+say “prepare these subscriber records for a teammate” when testing whether a
+control reads as applying to one row or the whole list. Ask the critic to record
+their first action and predicted outcome before revealing the intended behavior
+and identity. Use neutral labels and vary viewing order when comparing options.
+Then share the identity and relevant references so the critic can assess fit.
+Omit source code,
+implementation effort, the builder's preferred option, prior critique, and the
+desired score. Support claims about behavior or motion with live input or a
+recording. A still can establish what the control seems to do. Before sharing
+screenshots or artifacts with another agent or service, remove credentials,
+personal data, customer data, and confidential material, and stay within the
+user's authorized account and service boundaries.
 
 The critic should:
 
@@ -189,6 +223,12 @@ published or publicly shareable.
 ## Handoff
 
 Report the selected direction and rationale, rendered evidence, files changed,
-critic feedback resolved or still open, checks run, and any limitations. Label
-the result honestly as a concept, prototype, implementation, or production-ready
-surface.
+critic feedback resolved or still open, checks run, and any limitations. Show
+what changed the decision and give the user the smallest useful artifact to
+revisit it. Label the result honestly as a concept, prototype, implementation,
+or production-ready surface.
+
+If the user asks to track steering, count direction decisions, undecided
+responses, clarifying answers, and course corrections separately. Report elapsed
+time separately from observed hands-on time. Use a matched comparison before
+claiming a speed improvement.
