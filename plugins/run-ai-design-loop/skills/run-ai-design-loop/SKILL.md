@@ -222,6 +222,16 @@ does not help the primary task or reinforce the chosen identity. Audit for:
   components;
 - multiple competing “signature” effects where one strong move would suffice.
 
+Before calling the design done, inspect the highest-risk seams and edges up
+close. Start with a full render at the intended viewport and capture close-ups
+at 2× magnification while keeping the rendered layout fixed. Check places where
+two surfaces meet or a shape crosses a clipping boundary, such as a selected
+row against a frame or a sticky panel against its content. Look for stray
+slivers, disconnected shapes, clipping, and uneven borders. Replay the state
+change that exposes the join and check at a narrower supported viewport when
+the geometry changes. Fix visible defects and compare the same crop again.
+If close-up inspection is unavailable, report that gap in the handoff.
+
 Then verify the actual experience:
 
 - render critical states at relevant mobile and desktop sizes;
