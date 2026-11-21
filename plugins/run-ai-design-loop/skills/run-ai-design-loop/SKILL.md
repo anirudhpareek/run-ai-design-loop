@@ -18,9 +18,9 @@ Direct the design process from possibility to evidence. The goal is not novelty
 by itself; it is a distinctive interface that fits the product, helps the user,
 and survives production constraints.
 
-Use this skill as an orchestration layer. Load a specialist design,
-implementation, image-generation, or motion skill only when that part of the
-work actually requires it; do not duplicate its detailed guidance here.
+Use this skill to run the design loop. When translation, motion, imagery, or
+another specialist task becomes the limiting step, read and use the closest
+available specialist skill for that step. Add another only for a distinct need.
 
 If a specialist skill, renderer, or browser is unavailable, use the closest
 available implementation path and state what could not be visually verified.
@@ -158,52 +158,13 @@ identity containing:
 - explicit anti-goals and patterns to avoid;
 - the practical accessibility, responsive, and performance limits.
 
-Build or update the interface, then use an independent fresh-context critic
-whenever delegation or an equivalent review context is available. If it is not
-available, state that limitation and run the same screenshot-only brief as a
-constrained self-review.
-
-Before sharing the intended design, other feedback, or a suspected flaw, ask the
-critic to inspect the whole render and a few high-risk details and say what
-looks or feels off. Start from the same rendered evidence a designer would
-see. Check relationships between neighboring elements and states: doubled
-edges, uneven gaps, mismatched corners, clipping, shifting alignment, and
-decorative cues that appear detached or suggest the wrong action. For each
-finding, point to its location and state, describe what is visible, and say why
-it reads oddly. Distinguish a break in behavior from a taste judgment. Replay
-or compare a relevant adjacent state before generalizing. Report the strongest
-findings before asking the user for their reaction.
-
-When first-use clarity matters, give the critic a neutral goal and the rendered
-state first. Keep the answer to the question under review out of that goal,
-including the intended control, gesture, scope, or next state. For example,
-say “prepare these subscriber records for a teammate” when testing whether a
-control reads as applying to one row or the whole list. Ask the critic to record
-their first action and predicted outcome before revealing the intended behavior
-and identity. Use neutral labels and vary viewing order when comparing options.
-Then share the identity and relevant references so the critic can assess fit.
-Omit source code, implementation effort, the builder's preferred option, prior
-critique, and the desired score. Support claims about behavior or motion with live input or a
-recording. A still can establish what the control seems to do. Before sharing
-screenshots or artifacts with another agent or service, remove credentials,
-personal data, customer data, and confidential material, and stay within the
-user's authorized account and service boundaries.
-
-The critic should:
-
-1. Evaluate composition and product hierarchy before fine detail.
-2. Compare the result with the intended identity and reference quality bar.
-3. Identify generic patterns, inconsistency, weak restraint, and functional
-   confusion.
-4. Return a short list of fixes in order of impact. Anchor each to a specific
-   task step, element, or rendered state and its effect on the user. Label
-   predicted effects as such and check the closest relevant state before
-   treating a finding as general. Call out successful behavior the fix should
-   preserve.
-
-Prefer ranking against strong examples or anchored criteria over an arbitrary
-numeric score. If a score is useful, define what each threshold means and keep
-the stopping threshold out of the critic prompt.
+Build or update the interface. Run a [rendered review](references/rendered-review.md)
+with a fresh-context critic when available. Get their visual observations first,
+before sharing the intended direction, past feedback, or a suspected flaw.
+When first-use clarity matters, give a neutral task and ask for their first
+action and expected outcome before explaining the design. Then review fit
+against the selected direction. If independence is unavailable, disclose it
+and run the same review in a constrained context.
 
 Have the builder implement the highest-leverage changes, render the same states
 and viewports again, and re-run the unchanged critic brief. Stop when the main
@@ -236,15 +197,10 @@ does not help the primary task or reinforce the chosen identity. Audit for:
   components;
 - multiple competing “signature” effects where one strong move would suffice.
 
-Before calling the design done, inspect the highest-risk seams and edges up
-close. Start with a full render at the intended viewport and capture close-ups
-at 2× magnification while keeping the rendered layout fixed. Check places where
-two surfaces meet or a shape crosses a clipping boundary, such as a selected
-row against a frame or a sticky panel against its content. Look for stray
-slivers, disconnected shapes, clipping, and uneven borders. Replay the state
-change that exposes the join and check at a narrower supported viewport when
-the geometry changes. Fix visible defects and compare the same crop again.
-If close-up inspection is unavailable, report that gap in the handoff.
+Before calling the design done, use the [rendered review](references/rendered-review.md)
+for a 2× inspection of high-risk seams and edges at a fixed layout. Replay the
+state that exposes each join and compare the same crop after a fix. If dynamic
+content can change the outcome, replay the task with one relevant stress case.
 
 Then verify the actual experience:
 
@@ -269,16 +225,10 @@ published or publicly shareable.
 
 ## Learn from Corrections
 
-When the user corrects a design, record what they said or approved, the
-rendered state or decision it referred to, and any reason they gave. Look for
-corrections that could recur elsewhere in this project. Write the narrowest
-reusable rule in the project's DESIGN.md when the user has confirmed the
-preference and authorized recording it. The rule should tell a fresh reviewer
-what to inspect or change and when it applies. Mark any guessed reason or
-broader scope as provisional and ask only if settling it would change future
-work. Keep one-off edits and ordinary bugs in their existing context. Reconcile
-a correction with related rules before adding another. Use existing project
-instructions to find the right design file when more than one exists.
+When the user confirms a reusable preference and has authorized recording it,
+add the narrowest applicable rule to the project's DESIGN.md. Use
+[taste rules](references/taste-rules.md) to trace it to feedback, check its scope,
+and merge it with related guidance. Keep inferred reasons provisional.
 
 ## Handoff
 
