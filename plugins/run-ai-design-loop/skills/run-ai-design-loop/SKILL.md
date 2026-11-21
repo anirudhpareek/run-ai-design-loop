@@ -89,8 +89,14 @@ variants of one layout. Each brief should make clear:
 - the design thesis and product metaphor;
 - composition, hierarchy, typography, color, and material character;
 - one memorable visual or interaction idea;
-- how the direction supports the primary task;
+- what should become easier, clearer, or more memorable in the primary task,
+  and which moment would show whether that happened;
 - its main usability, accessibility, performance, or implementation risk.
+
+Name the main difference that people could actually experience, such as the
+order they encounter information or what stays visible while they act. When
+the existing design is still a viable choice, include it as a baseline using
+the same task. Keep exploration scoped to the decision the user left open.
 
 Use one or more of these divergence mechanisms when needed:
 
@@ -124,6 +130,12 @@ user to choose when the decision would materially change the product and they
 have not asked for autonomous execution; otherwise choose, state why, and move
 forward.
 
+At the choice point, give the designer a neutral task they can try and one
+specific moment to react to. Keep their reason tied to the option and state
+where it happened. If they prefer one overall but like a detail in another,
+check that the detail serves the chosen direction and replay the affected task
+before carrying it over.
+
 If the user is still torn, use the comparison or critique to identify a shared
 obstacle, missing evidence, or a tradeoff the first comparison obscured. Fix
 shared obstacles the same way across the viable options, narrow to meaningful
@@ -156,9 +168,8 @@ control reads as applying to one row or the whole list. Ask the critic to record
 their first action and predicted outcome before revealing the intended behavior
 and identity. Use neutral labels and vary viewing order when comparing options.
 Then share the identity and relevant references so the critic can assess fit.
-Omit source code,
-implementation effort, the builder's preferred option, prior critique, and the
-desired score. Support claims about behavior or motion with live input or a
+Omit source code, implementation effort, the builder's preferred option, prior
+critique, and the desired score. Support claims about behavior or motion with live input or a
 recording. A still can establish what the control seems to do. Before sharing
 screenshots or artifacts with another agent or service, remove credentials,
 personal data, customer data, and confidential material, and stay within the
@@ -170,8 +181,11 @@ The critic should:
 2. Compare the result with the intended identity and reference quality bar.
 3. Identify generic patterns, inconsistency, weak restraint, and functional
    confusion.
-4. Return a short, prioritized set of concrete changes, separating observable
-   defects from subjective options.
+4. Return a short list of fixes in order of impact. Anchor each to a specific
+   task step, element, or rendered state and its effect on the user. Label
+   predicted effects as such and check the closest relevant state before
+   treating a finding as general. Call out successful behavior the fix should
+   preserve.
 
 Prefer ranking against strong examples or anchored criteria over an arbitrary
 numeric score. If a score is useful, define what each threshold means and keep
@@ -182,6 +196,13 @@ and viewports again, and re-run the unchanged critic brief. Stop when the main
 gaps are resolved, feedback becomes marginal or circular, or further changes
 would trade away product clarity. Product constraints and explicit user intent
 override the critic.
+
+If the remaining decision is about a tunable detail such as density or motion,
+save two replayable presets of the same design with the same starting state.
+Change the value under review, keep other variables fixed, and apply the chosen
+values to the implementation. Use existing preview controls when possible.
+For motion, capture the decisive intermediate state or interruption if start
+and end frames miss the difference.
 
 Before retaining rich generated media, define and measure a transfer,
 critical-path, and runtime-performance budget appropriate to the product and
@@ -204,8 +225,10 @@ does not help the primary task or reinforce the chosen identity. Audit for:
 Then verify the actual experience:
 
 - render critical states at relevant mobile and desktop sizes;
-- inspect real interactions, loading, empty, error, overflow, and long-content
-  behavior where applicable;
+- run the primary task from its normal entry point and inspect the result the
+  user relies on, such as a saved state after reload or the opened export;
+- inspect loading, empty, error, overflow, and long-content behavior where
+  applicable;
 - check semantic controls, keyboard and focus behavior, contrast, touch targets,
   reduced-motion handling, and non-motion fallbacks;
 - check asset weight, image dimensions, video or canvas fallbacks, responsive

@@ -58,6 +58,15 @@ cp -R run-ai-design-loop/plugins/run-ai-design-loop/skills/run-ai-design-loop "$
 Codex normally detects new skills automatically. Restart it if the skill does
 not appear.
 
+## Methods and credit
+
+- Tie feedback to an element or moment in a playable option. [Design Lab](https://github.com/0xdesign/design-plugin)
+- Compare designs with controlled inputs and repeatable states. [Component Canvas](https://www.ui-skills.com/skills/ibelick/component-canvas)
+- Check what the interface shows alongside how it reads. [Impeccable](https://github.com/pbakaus/impeccable/blob/main/skill/reference/critique.md)
+- Capture the moment that matters in a transition and save choices you can
+  replay. [Interface BTS](https://iamnoman.com/interface-bts), [DialKit](https://github.com/joshpuckett/dialkit)
+- Check the result through the actual workflow. [Toolcraft](https://github.com/pixel-point/toolcraft)
+
 ## What it expects
 
 - An interface brief or an existing implementation to improve.
