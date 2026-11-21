@@ -66,6 +66,9 @@ not appear.
 - Capture the moment that matters in a transition and save choices you can
   replay. [Interface BTS](https://iamnoman.com/interface-bts), [DialKit](https://github.com/joshpuckett/dialkit)
 - Check the result through the actual workflow. [Toolcraft](https://github.com/pixel-point/toolcraft)
+- Look closely at how neighboring surfaces and states fit together. `tactile-design`
+- Turn confirmed, recurring design corrections into scoped project rules.
+  [Learn Taste](https://aiforui.dev/skills/learn-taste)
 
 ## What it expects
 
