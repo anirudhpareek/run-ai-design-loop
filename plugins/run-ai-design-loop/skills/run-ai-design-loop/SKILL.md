@@ -73,7 +73,9 @@ changed files, client bundles, logs, screenshots, or deployment inputs.
 Inspect the current product and the available brief first. Identify the audience,
 primary task, outcome, and decision still open. Record what is fixed, what is an
 existing default worth testing, and what is genuinely unknown. Capture a rendered
-baseline when an implementation already exists.
+baseline when an implementation already exists. Read the project's DESIGN.md
+and any linked design rules before exploring. Use confirmed project preferences
+when comparing directions and polishing.
 
 If two plausible interpretations would change the audience, primary task,
 constraints, or definition of success, ask one focused question that explains
@@ -160,6 +162,18 @@ Build or update the interface, then use an independent fresh-context critic
 whenever delegation or an equivalent review context is available. If it is not
 available, state that limitation and run the same screenshot-only brief as a
 constrained self-review.
+
+Before sharing the intended design, other feedback, or a suspected flaw, ask the
+critic to inspect the whole render and a few high-risk details and say what
+looks or feels off. Start from the same rendered evidence a designer would
+see. Check relationships between neighboring elements and states: doubled
+edges, uneven gaps, mismatched corners, clipping, shifting alignment, and
+decorative cues that appear detached or suggest the wrong action. For each
+finding, point to its location and state, describe what is visible, and say why
+it reads oddly. Distinguish a break in behavior from a taste judgment. Replay
+or compare a relevant adjacent state before generalizing. Report the strongest
+findings before asking the user for their reaction.
+
 When first-use clarity matters, give the critic a neutral goal and the rendered
 state first. Keep the answer to the question under review out of that goal,
 including the intended control, gesture, scope, or next state. For example,
@@ -252,6 +266,19 @@ Complete the relevant QA before deploying. Deploy only when the user has
 explicitly requested or authorized it. After deployment, verify the target is
 reachable in the intended authentication context before claiming it is
 published or publicly shareable.
+
+## Learn from Corrections
+
+When the user corrects a design, record what they said or approved, the
+rendered state or decision it referred to, and any reason they gave. Look for
+corrections that could recur elsewhere in this project. Write the narrowest
+reusable rule in the project's DESIGN.md when the user has confirmed the
+preference and authorized recording it. The rule should tell a fresh reviewer
+what to inspect or change and when it applies. Mark any guessed reason or
+broader scope as provisional and ask only if settling it would change future
+work. Keep one-off edits and ordinary bugs in their existing context. Reconcile
+a correction with related rules before adding another. Use existing project
+instructions to find the right design file when more than one exists.
 
 ## Handoff
 
